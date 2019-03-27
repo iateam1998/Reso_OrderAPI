@@ -28,24 +28,25 @@ namespace Reso_OrderAPI.Controllers
         {
             var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
             var result = orderService.GetOrders(storeId, orderRequest);
-            if (result == null)
+            var check = result.Count();
+            if (check != 0)
             {
-                return NotFound();
+                return Ok(result);
             }
-            return Ok(result);
+            return NotFound(); 
         }
 
         [HttpGet]
-        [Route("order/{rentID}")]
-        public IActionResult GetOrderByRentID(int rentID)
+        [Route("{storeId}/{rentID}")]
+        public IActionResult GetOrderByRentID(int storeId, int rentID)
         {
             var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
-            var result = orderService.GetOrderByRentID(rentID);
-            if (result == null)
+            var result = orderService.GetOrderByRentID(storeId, rentID);
+            if (result != null)
             {
-                return NotFound();
+                return Ok(result);
             }
-            else return Ok(result);
+            return NotFound(); 
         }
     }
 }

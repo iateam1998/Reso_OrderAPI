@@ -23,29 +23,30 @@ namespace Reso_OrderAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{rentId}")]
-        public IActionResult GetAllOrderDetailByRentID(int rentId, [FromQuery] OrderDetailRequestModel model)
+        [Route("{storeId}")]
+        public IActionResult GetAllOrderDetailByRentID(int storeId, [FromQuery] OrderDetailRequestModel model)
         {
             var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
-            var result = orderDetailService.GetAllOrderDetailByRentID(rentId, model);
-            if (result == null)
+            var result = orderDetailService.GetAllOrderDetailByRentID(storeId, model);
+            var check = result.Count();
+            if (check != 0)
             {
-                return NotFound();
+                return Ok(result);
             }
-            return Ok(result);
+            return NotFound(); 
         }
 
         [HttpGet]
-        [Route("orderdetail/{orderDetailID}")]
-        public IActionResult GetOrderDetailByIDSync(int orderDetailID)
+        [Route("{storeId}/{orderDetailID}")]
+        public IActionResult GetOrderDetailByIDSync(int storeId, int orderDetailID)
         {
             var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
-            var result = orderDetailService.GetOrderDetailByIDSync(orderDetailID);
-            if (result == null)
+            var result = orderDetailService.GetOrderDetailByIDSync(storeId, orderDetailID);
+            if (result != null)
             {
-                return NotFound();
+                return Ok(result);
             }
-            return Ok(result);
+            return NotFound(); 
         }
     }
 }

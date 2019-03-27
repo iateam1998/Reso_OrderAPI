@@ -33,13 +33,13 @@ namespace DataService.Model.ViewModel
         public string OrderDetailAtt2 { get; set; }
         public bool? Active { get; set; }
 
-        public virtual OrderDetailPromotionMapping OrderDetailPromotionMapping { get; set; }
-        public virtual OrderPromotionMapping OrderPromotionMapping { get; set; }
-        public virtual OrderDetail Parent { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Order Rent { get; set; }
-        public virtual ICollection<OrderDetail> InverseParent { get; set; }
-        public virtual ICollection<OrderDetailPromotionMapping> OrderDetailPromotionMappingNavigation { get; set; }
+        public virtual OrderDetailPromotionMapping OrderDetailPromotionMappings { get; set; }
+        public virtual OrderPromotionMapping OrderPromotionMappings { get; set; }
+        public virtual OrderDetail Parents { get; set; }
+        public virtual Product Products { get; set; }
+        public virtual Order Rents { get; set; }
+        public virtual ICollection<OrderDetail> InverseParents { get; set; }
+        public virtual ICollection<OrderDetailPromotionMapping> OrderDetailPromotionMappingNavigations { get; set; }
     }
 
     public class OrderDetailRequestModel
@@ -53,7 +53,7 @@ namespace DataService.Model.ViewModel
         public int? finalAmount { get; set; }
         public bool? isDiscount { get; set; }
         public int? unitPrice { get; set; }
-        public int? storeID { get; set; }
+        public int? rentID { get; set; }
         public int? itemQuantity { get; set; }
         public int? tmpDetailId { get; set; }
     }
