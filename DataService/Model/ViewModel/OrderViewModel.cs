@@ -89,4 +89,22 @@ namespace DataService.Model.ViewModel
         public virtual ICollection<Rating> Rating { get; set; }
         public virtual ICollection<Receipt> Receipt { get; set; }
     }
+
+    public class OrderRequestModel{
+        public string involvedID { get; set; }
+        public DateTime? startDate { get; set; }
+        public DateTime? endDate { get; set; }
+        public int? totalAmount { get; set; }
+        public bool? isDiscount { get; set; }
+        public bool? isDiscountOrderDetail { get; set; }
+        public int? finalAmount { get; set; }
+        public int? orderStatus { get; set; }
+        public int? orderType { get; set; }
+        public string checkInPerson { get; set; }
+        public int? customerTypeID { get; set; }
+        public int? deliveryStatus { get; set; }
+        public int? checkInHour { get; set; }
+        public int? totalInvolvedPrint { get; set; }
+        public int? personCount { get; set; }
+    }
 }

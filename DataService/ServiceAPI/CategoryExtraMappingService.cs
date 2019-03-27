@@ -9,7 +9,8 @@ namespace DataService.ServiceAPI
 {
     public interface ICategoryExtraMappingService : IBaseService<CategoryExtraMapping, CategoryExtraMappingViewModel>
     {
-        IEnumerable<CategoryExtraMappingViewModel> GetCategoryExtraMappings();
+        IEnumerable<CategoryExtraMappingViewModel> GetAllCategoryExtraMappings();
+        IEnumerable<CategoryExtraMappingViewModel> GetCategoryExtraMappingsByExtraCategoryId(int extraCategoryId);
     }
     public class CategoryExtraMappingService : BaseService<CategoryExtraMapping, CategoryExtraMappingViewModel>, ICategoryExtraMappingService
     {
@@ -17,9 +18,15 @@ namespace DataService.ServiceAPI
         {
         }
 
-        public IEnumerable<CategoryExtraMappingViewModel> GetCategoryExtraMappings()
+        public IEnumerable<CategoryExtraMappingViewModel> GetAllCategoryExtraMappings()
         {
-            var result = this.Get(p=>p.IsEnable ==true);
+            var result = this.Get(p=>p.IsEnable == true);
+            return result;
+        }
+
+        public IEnumerable<CategoryExtraMappingViewModel> GetCategoryExtraMappingsByExtraCategoryId(int extraCategoryId)
+        {
+            var result = this.Get(p => p.ExtraCategoryId == extraCategoryId && p.IsEnable == true);
             return result;
         }
     }

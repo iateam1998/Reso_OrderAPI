@@ -29,6 +29,7 @@ namespace DataService
             services.AddScoped(typeof(ICategoryExtraMappingService), typeof(CategoryExtraMappingService));
             services.AddScoped(typeof(IProductCategoryService), typeof(ProductCategoryService));
             services.AddScoped(typeof(IOrderService), typeof(OrderService));
+            services.AddScoped(typeof(IOrderDetailService), typeof(OrderDetailService));
 
             #endregion
 

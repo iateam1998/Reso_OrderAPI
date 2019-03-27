@@ -19,3 +19,14 @@ D:\Wisky\Project\Reso_OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.A
 D:\Wisky\Project\Reso_OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.dll
 D:\Wisky\Project\Reso_OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
 D:\Wisky\Project\Reso_OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\DataService.deps.json
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\DataService.runtimeconfig.json
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\DataService.runtimeconfig.dev.json
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\DataService.dll
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\DataService.pdb
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CoreCompileInputs.cache
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.AssemblyInfoInputs.cache
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.AssemblyInfo.cs
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.dll
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache

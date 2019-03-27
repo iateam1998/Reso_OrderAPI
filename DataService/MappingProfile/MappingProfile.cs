@@ -40,6 +40,9 @@ namespace DataService.MappingProfileModel
 
             this.CreateMap<CategoryExtraMapping, CategoryExtraMappingViewModel>();
             this.CreateMap<CategoryExtraMappingViewModel, CategoryExtraMapping>();
+
+            this.CreateMap<OrderDetail, OrderDetailViewModel>();
+            this.CreateMap<OrderDetailViewModel, OrderDetail>();
             // For Missing Type
             this.AllowNullCollections = true;
             this.AllowNullDestinationValues = true;

@@ -11,7 +11,7 @@ namespace DataService.ServiceAPI
 {
     public interface IProductService : IBaseService<Product, ProductViewModel>
     {
-        IQueryable<ProductViewModel> GetAvailableByProductCategoryId(int categoryId);
+        IQueryable<ProductViewModel> GetAllProductAvailableByCategoryId(int categoryId);
         IEnumerable<ProductViewModel> GetAllProductsByBrand(int brandId);
     }
     public class ProductService : BaseService<Product, ProductViewModel>, IProductService
@@ -28,7 +28,7 @@ namespace DataService.ServiceAPI
             return result;
         }
 
-        public IQueryable<ProductViewModel> GetAvailableByProductCategoryId(int categoryId)
+        public IQueryable<ProductViewModel> GetAllProductAvailableByCategoryId(int categoryId)
         {
             var products = this
                 .GetActiveAsNoTracking(q => q.CatId == categoryId 

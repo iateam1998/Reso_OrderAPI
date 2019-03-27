@@ -6,9 +6,18 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Wisky\Project\Reso_OrderAPI\Reso_OrderAPI\Reso_OrderAPI.xml</DocumentationFile>
+    <DocumentationFile>E:\Internship\Developer\OrderAPI\Reso_OrderAPI\Reso_OrderAPI.xml</DocumentationFile>
     <NoWarn>1701;1702;1591</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CategoryExtraMappingController.cs" />
+    <Compile Remove="Controllers\ProductCategoryController.cs" />
+    <Compile Remove="Controllers\ProductController.cs" />
+    <Compile Remove="Controllers\ProductDetailMappingController.cs" />
+    <Compile Remove="Controllers\StoreController.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

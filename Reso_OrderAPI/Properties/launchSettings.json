@@ -19,7 +19,7 @@
     "Reso_OrderAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/order",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
