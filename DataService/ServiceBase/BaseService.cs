@@ -389,6 +389,7 @@ namespace DataService
         {
             return GetActiveAsNoTracking(predicate).ProjectTo<TViewModel>(this.Mapper.ConfigurationProvider);
         }
+        
         #endregion
         #region First or Default Services
         public TViewModel FirstOrDefault()

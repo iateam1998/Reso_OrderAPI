@@ -30,3 +30,17 @@ E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService
 E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.dll
 E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
 E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\DataService.deps.json
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\DataService.runtimeconfig.json
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\DataService.runtimeconfig.dev.json
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\DataService.dll
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\DataService.pdb
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Data.dll
+E:\C#\POS\DataService\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Mvc.dll
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CoreCompileInputs.cache
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.AssemblyInfoInputs.cache
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.AssemblyInfo.cs
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CopyComplete
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.dll
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache

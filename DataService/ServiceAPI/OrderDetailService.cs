@@ -45,5 +45,10 @@ namespace DataService.ServiceAPI
             var result = list.FirstOrDefault(p => p.OrderDetailId == orderDetailID);
             return result;
         }
+
+        public void CreateOrderDetail(OrderDetailViewModel orderDetail)
+        {
+            this.Create(orderDetail);
+        }
     }
 }

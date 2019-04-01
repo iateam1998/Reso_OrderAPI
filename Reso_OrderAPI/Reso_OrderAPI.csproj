@@ -30,4 +30,13 @@
     <ProjectReference Include="..\DataService\DataService.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="SkyWeb.DatVM.Data">
+      <HintPath>Utils\SkyWeb.DatVM.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SkyWeb.DatVM.Mvc">
+      <HintPath>Utils\SkyWeb.DatVM.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

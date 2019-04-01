@@ -107,4 +107,33 @@ namespace DataService.Model.ViewModel
         public int? totalInvolvedPrint { get; set; }
         public int? personCount { get; set; }
     }
+
+    //public class OrderRequestPostModel
+    //{
+    //    public string involvedID { get; set; }
+    //    public DateTime checktInDate { get; set; }
+    //    public DateTime? checkOutDate { get; set; }
+    //    public DateTime? ApproveDate { get; set; }
+    //    public int totalAmount { get; set; }
+    //    public int? discount { get; set; }
+    //    public int? discountOrderDetail { get; set; }
+    //    public int? finalAmount { get; set; }
+    //    public int orderStatus { get; set; }
+    //    public int? orderType { get; set; }
+    //    public string checkInPerson { get; set; }
+    //    public int? sourceId { get; set; }
+    //    public string deliveryAddress { get; set; }
+    //    public int? deliveryStatus { get; set; }
+
+    //    public int? checkInHour { get; set; }
+
+    //    public int? totalInvolvedPrint { get; set; }
+
+    //    public int? numberOfGuest { get; set; }
+
+    //    public string att1 { get; set; }
+    //    public string deliveryReceiver { get; set; }
+    //    public string deliveryPhone { get; set; }
+    //    public int? personCount { get; set; }
+    //}
 }

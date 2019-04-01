@@ -14,6 +14,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview3.19128.7" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SkyWeb.DatVM.Data">
+      <HintPath>..\Reso_OrderAPI\Utils\SkyWeb.DatVM.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SkyWeb.DatVM.Mvc">
+      <HintPath>..\Reso_OrderAPI\Utils\SkyWeb.DatVM.Mvc.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

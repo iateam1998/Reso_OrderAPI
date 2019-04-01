@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using DataService;
 using DataService.Model.ViewModel;
@@ -47,6 +48,19 @@ namespace Reso_OrderAPI.Controllers
                 return Ok(result);
             }
             return NotFound(); 
+        }
+
+        [HttpPost]
+        [Route("CreateOrder/{storeId}")]
+        public IActionResult CreateOrder(int storeId, OrderApiViewModel order)
+        {
+            var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+            var result = orderService.CreateOrder(storeId, order);
+            if (result == true)
+            {
+                return Ok(result);
+            }
+            return NotFound();
         }
     }
 }

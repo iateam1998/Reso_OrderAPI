@@ -43,6 +43,12 @@ namespace DataService.MappingProfileModel
 
             this.CreateMap<OrderDetail, OrderDetailViewModel>();
             this.CreateMap<OrderDetailViewModel, OrderDetail>();
+
+            this.CreateMap<Payment, PaymentViewModel>();
+            this.CreateMap<PaymentViewModel, Payment>();
+
+            this.CreateMap<Room, RoomViewModel>();
+            this.CreateMap<RoomViewModel, Room>();
             // For Missing Type
             this.AllowNullCollections = true;
             this.AllowNullDestinationValues = true;
