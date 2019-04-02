@@ -1,6 +1,8 @@
 ﻿using DataService.Model.Entity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataService.Model.ViewModel
@@ -33,17 +35,22 @@ namespace DataService.Model.ViewModel
         public string OrderDetailAtt2 { get; set; }
         public bool? Active { get; set; }
 
-        public virtual OrderDetailPromotionMapping OrderDetailPromotionMappings { get; set; }
-        public virtual OrderPromotionMapping OrderPromotionMappings { get; set; }
-        public virtual OrderDetail Parents { get; set; }
-        public virtual Product Products { get; set; }
-        public virtual Order Rents { get; set; }
-        public virtual ICollection<OrderDetail> InverseParents { get; set; }
-        public virtual ICollection<OrderDetailPromotionMapping> OrderDetailPromotionMappingNavigations { get; set; }
+        public virtual OrderDetailPromotionMapping OrderDetailPromotionMapping { get; set; }
+        public virtual OrderPromotionMapping OrderPromotionMapping { get; set; }
+        public virtual OrderDetail Parent { get; set; }
+        public virtual ProductViewModel Product { get; set; }
+        public virtual Order Rent { get; set; }
+        public virtual ICollection<OrderDetail> InverseParent { get; set; }
+        public virtual ICollection<OrderDetailPromotionMapping> OrderDetailPromotionMappingNavigation { get; set; }
     }
 
     public class OrderDetailRequestModel
     {
+        [JsonProperty("Store Id")]
+        [Required]
+        public int storeId { get; set; }
+        [JsonProperty("Order Detail Id")]
+        public int? orderDetailId { get; set; }
         public int? productID { get; set; }
         public int? totalAmount { get; set; }
         public int? quantity { get; set; }

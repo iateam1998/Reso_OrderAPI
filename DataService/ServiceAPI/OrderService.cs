@@ -16,20 +16,45 @@ namespace DataService.ServiceAPI
 {
     public interface IOrderService : IBaseService<Order, OrderViewModel>
     {
-        IEnumerable<OrderViewModel> GetOrders(int storeId, OrderRequestModel model);
-        OrderViewModel GetOrderByRentID(int storeId, int rentId);
+        IEnumerable<OrderViewModel> GetOrders(OrderRequestModel model);
+        //IEnumerable<OrderViewModel> GetOrders(int storeId, OrderRequestModel model);
+        //OrderViewModel GetOrderByRentID(int storeId, int rentId);
+        OrderViewModel GetOrderByRentID(OrderRequestModel model);
         bool CreateOrder(int storeId, OrderApiViewModel orderRequest);
     }
 
     public class OrderService : BaseService<Order, OrderViewModel>, IOrderService
     {
         private readonly IServiceProvider _serviceProvider;
-        public OrderService(IUnitOfWork unitOfWork, IMapper mapper,IServiceProvider serviceProvider) : base(unitOfWork, mapper)
+        public OrderService(IUnitOfWork unitOfWork, IMapper mapper, IServiceProvider serviceProvider) : base(unitOfWork, mapper)
         {
             _serviceProvider = serviceProvider;
         }
 
-        public IEnumerable<OrderViewModel> GetOrders(int storeId, OrderRequestModel model)
+        public IEnumerable<OrderViewModel> GetOrders(OrderRequestModel model)
+        {
+            var result = this.GetActive(p => (p.StoreId == model.storeId)
+           && (model.rentId == null || p.RentId == model.rentId)
+           && (model.involvedID == null || model.involvedID == p.InvoiceId)
+           && (model.personCount == null || model.personCount == p.PersonCount)
+           && (model.totalInvolvedPrint == null || model.totalInvolvedPrint == p.TotalInvoicePrint)
+           && (model.deliveryStatus == null || model.deliveryStatus == p.DeliveryStatus)
+           && (model.customerTypeID == null || model.customerTypeID == p.CustomerTypeId)
+           && (model.checkInPerson == null || model.checkInPerson == p.CheckInPerson)
+           && (model.checkInHour == null || model.checkInHour == p.CheckinHour)
+           && (model.totalAmount == null || model.totalAmount == p.TotalAmount)
+           && (model.finalAmount == null || model.finalAmount == p.FinalAmount)
+           && (model.isDiscountOrderDetail == null || (p.DiscountOrderDetail > 0 && model.isDiscountOrderDetail == true) || (p.DiscountOrderDetail == 0 && model.isDiscountOrderDetail == false))
+           && (model.orderStatus == null || p.OrderStatus == model.orderStatus)
+           && (model.orderType == null || p.OrderType == model.orderType)
+           && (model.startDate == null || p.CheckInDate >= model.startDate) && (model.endDate == null || p.CheckInDate <= model.endDate)
+           && (model.isDiscount == null || (p.Discount > 0 && model.isDiscount == true) || (p.Discount == 0 && model.isDiscount == false))
+           && (model.paymentId == null || (p.Payment.FirstOrDefault(q => q.PaymentId == model.paymentId) != null))
+           );
+            return result;
+
+        }
+        private IEnumerable<OrderViewModel> GetOrders(int storeId, OrderRequestModel model)
         {
             var result = this.GetActive(p => (p.StoreId == storeId)
             && (model.involvedID == null || model.involvedID == p.InvoiceId)
@@ -49,12 +74,21 @@ namespace DataService.ServiceAPI
             );
             return result;
         }
-
-        public OrderViewModel GetOrderByRentID(int storeId, int rentId)
+        private OrderViewModel GetOrderByRentID(int storeId, int rentId)
+        //public OrderViewModel GetOrderByRentID(OrderRequestModel model)
         {
-            var list = this.GetOrders(storeId, new OrderRequestModel());
+            var list = this.GetOrders(new OrderRequestModel());
             var result = list.FirstOrDefault(p => p.RentId == rentId);
             return result;
+
+        }
+
+        public OrderViewModel GetOrderByRentID(OrderRequestModel model)
+        {
+            var list = this.GetOrders(new OrderRequestModel());
+            var result = list.FirstOrDefault(p => p.StoreId == model.storeId);
+            return result;
+
         }
 
         public bool CreateOrder(int storeId, OrderApiViewModel orderRequest)
@@ -64,11 +98,12 @@ namespace DataService.ServiceAPI
             var order = new OrderViewModel();
             MapOrder(orderRequest, order, storeId);
             this.Create(order);
+            var rId = this.LastOrDefault().RentId;
             foreach (var orderDetailRequest in orderRequest.OrderDetailViewModels)
             {
                 var orderDetail = new OrderDetailViewModel();
                 MapOrderDetail(orderDetailRequest, orderDetail, storeId);
-                orderDetail.RentId = order.RentId;
+                orderDetail.RentId = rId;
                 orderDetail.Active = true;
                 _orderDetailService.Create(orderDetail);
             }
@@ -78,7 +113,39 @@ namespace DataService.ServiceAPI
                 {
                     var payment = new PaymentViewModel();
                     MapPayment(paymentRequest, payment);
-                    payment.ToRentId = order.RentId;
+                    payment.ToRentId = rId;
+                    //payment = true;
+                    _paymentService.Create(payment);
+                }
+                //orderRequest.Room.CurrentRentId = -1;
+            }
+            return true;
+        }
+
+        public bool UpdateOrder(int storeId, OrderApiViewModel orderRequest)
+        {
+            var _orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
+            var _paymentService = ServiceFactory.CreateService<IPaymentService>(_serviceProvider);
+            var order = new OrderViewModel();
+            MapOrder(orderRequest, order, storeId);
+            //if (orderRequest.)
+            this.Update(order);
+            var rId = this.LastOrDefault().RentId;
+            foreach (var orderDetailRequest in orderRequest.OrderDetailViewModels)
+            {
+                var orderDetail = new OrderDetailViewModel();
+                MapOrderDetail(orderDetailRequest, orderDetail, storeId);
+                orderDetail.RentId = rId;
+                orderDetail.Active = true;
+                _orderDetailService.Create(orderDetail);
+            }
+            if (orderRequest.PaymentMs.Count > 0)
+            {
+                foreach (var paymentRequest in orderRequest.PaymentMs)
+                {
+                    var payment = new PaymentViewModel();
+                    MapPayment(paymentRequest, payment);
+                    payment.ToRentId = rId;
                     //payment = true;
                     _paymentService.Create(payment);
                 }

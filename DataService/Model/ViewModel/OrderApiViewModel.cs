@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataService.Model.ViewModel
@@ -53,7 +54,6 @@ namespace DataService.Model.ViewModel
         public List<OrderDetailApiViewModel> OrderDetailViewModels { get; set; }
         public List<PaymentApiViewModel> PaymentMs { get; set; }
         public List<OrderPromotionMappingModel> OrderPromotionMappingMs { get; set; }
-
         public Nullable<System.DateTime> LastModifiedPayment { get; set; }
         //{ get return DateTime.Now; set; }
         public Nullable<System.DateTime> LastModifiedOrderDetail { get; set; }
@@ -126,7 +126,6 @@ namespace DataService.Model.ViewModel
         //public int Id { get; set; }
         //public int OrderDetailId { get; set; }
         [JsonProperty("PromotionId")]
-       
         public string PromotionCode { get; set; }
         [JsonProperty("PromotionDetailId")]
         public string PromotionDetailCode { get; set; }

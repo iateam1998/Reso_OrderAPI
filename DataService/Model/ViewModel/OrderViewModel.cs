@@ -1,6 +1,8 @@
 ﻿using DataService.Model.Entity;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DataService.Model.ViewModel
@@ -82,7 +84,7 @@ namespace DataService.Model.ViewModel
         public virtual Store Store { get; set; }
         public virtual SubRentGroup SubRentGroup { get; set; }
         public virtual Ward WardCodeNavigation { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+        public virtual ICollection<OrderDetailViewModel> OrderDetail { get; set; }
         public virtual ICollection<OrderFeeItem> OrderFeeItem { get; set; }
         public virtual ICollection<OrderPromotionMapping> OrderPromotionMapping { get; set; }
         public virtual ICollection<Payment> Payment { get; set; }
@@ -91,6 +93,11 @@ namespace DataService.Model.ViewModel
     }
 
     public class OrderRequestModel{
+        [Required]
+        [JsonProperty("Store Id")]
+        public int storeId { get; set; }
+        [JsonProperty("Rent Id")]
+        public int? rentId { get; set; }
         public string involvedID { get; set; }
         public DateTime? startDate { get; set; }
         public DateTime? endDate { get; set; }
@@ -106,6 +113,23 @@ namespace DataService.Model.ViewModel
         public int? checkInHour { get; set; }
         public int? totalInvolvedPrint { get; set; }
         public int? personCount { get; set; }
+        [JsonProperty("Payment Id")]
+        public int? paymentId { get; set; }
+        //public string involvedID { get; set; }
+        //public DateTime? startDate { get; set; }
+        //public DateTime? endDate { get; set; }
+        //public int? totalAmount { get; set; }
+        //public bool? isDiscount { get; set; }
+        //public bool? isDiscountOrderDetail { get; set; }
+        //public int? finalAmount { get; set; }
+        //public int? orderStatus { get; set; }
+        //public int? orderType { get; set; }
+        //public string checkInPerson { get; set; }
+        //public int? customerTypeID { get; set; }
+        //public int? deliveryStatus { get; set; }
+        //public int? checkInHour { get; set; }
+        //public int? totalInvolvedPrint { get; set; }
+        //public int? personCount { get; set; }
     }
 
     //public class OrderRequestPostModel

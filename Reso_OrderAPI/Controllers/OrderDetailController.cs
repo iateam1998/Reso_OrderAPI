@@ -22,31 +22,45 @@ namespace Reso_OrderAPI.Controllers
             _utils = utils;
         }
 
+        //[HttpGet]
+        //[Route("{storeId}")]
+        //public IActionResult GetAllOrderDetailByRentID(int storeId, [FromQuery] OrderDetailRequestModel model)
+        //{
+        //    var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
+        //    var result = orderDetailService.GetAllOrderDetailByRentID(storeId, model);
+        //    var check = result.Count();
+        //    if (check != 0)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound();
+        //}
+
         [HttpGet]
-        [Route("{storeId}")]
-        public IActionResult GetAllOrderDetailByRentID(int storeId, [FromQuery] OrderDetailRequestModel model)
+        [Route("GetAllOrderDetails")]
+        public IActionResult GetAllOrderDetailByRentID([FromQuery] OrderDetailRequestModel model)
         {
             var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
-            var result = orderDetailService.GetAllOrderDetailByRentID(storeId, model);
+            var result = orderDetailService.GetAllOrderDetailByRentID(model);
             var check = result.Count();
             if (check != 0)
             {
                 return Ok(result);
             }
-            return NotFound(); 
+            return NotFound();
         }
 
-        [HttpGet]
-        [Route("{storeId}/{orderDetailID}")]
-        public IActionResult GetOrderDetailByIDSync(int storeId, int orderDetailID)
-        {
-            var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
-            var result = orderDetailService.GetOrderDetailByIDSync(storeId, orderDetailID);
-            if (result != null)
-            {
-                return Ok(result);
-            }
-            return NotFound(); 
-        }
+        //[HttpGet]
+        //[Route("{storeId}/{orderDetailID}")]
+        //public IActionResult GetOrderDetailByIDSync(OrderDetailRequestModel model)
+        //{
+        //    var orderDetailService = ServiceFactory.CreateService<IOrderDetailService>(_serviceProvider);
+        //    var result = orderDetailService.GetOrderDetailByIDSync(model);
+        //    if (result != null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound(); 
+        //}
     }
 }

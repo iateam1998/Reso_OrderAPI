@@ -23,32 +23,59 @@ namespace Reso_OrderAPI.Controllers
             _utils = utils;
         }
 
+        //[HttpGet]
+        //[Route("{storeId}")]
+        //public IActionResult GetOrders(int storeId, [FromQuery] OrderRequestModel orderRequest)
+        //{
+        //    var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+        //    var result = orderService.GetOrders(storeId, orderRequest);
+        //    var check = result.Count();
+        //    if (check != 0)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound(); 
+        //}
+
         [HttpGet]
-        [Route("{storeId}")]
-        public IActionResult GetOrders(int storeId, [FromQuery] OrderRequestModel orderRequest)
+        [Route("GetAllOrders")]
+        public IActionResult GetOrders([FromQuery] OrderRequestModel orderRequest)
         {
             var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
-            var result = orderService.GetOrders(storeId, orderRequest);
+            var result = orderService.GetOrders(orderRequest);
             var check = result.Count();
             if (check != 0)
             {
                 return Ok(result);
             }
-            return NotFound(); 
+            return NotFound();
         }
 
-        [HttpGet]
-        [Route("{storeId}/{rentID}")]
-        public IActionResult GetOrderByRentID(int storeId, int rentID)
-        {
-            var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
-            var result = orderService.GetOrderByRentID(storeId, rentID);
-            if (result != null)
-            {
-                return Ok(result);
-            }
-            return NotFound(); 
-        }
+        //[HttpGet]
+        //[Route("{storeId}/{rentID}")]
+        //public IActionResult GetOrderByRentID(int storeId, int rentID)
+        //{
+        //    var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+        //    var result = orderService.GetOrderByRentID(storeId, rentID);
+        //    if (result != null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound(); 
+        //}
+
+        //[HttpGet]
+        //[Route("GetOrder")]
+        //public IActionResult GetOrderByRentID([FromQuery] OrderRequestModel orderRequest)
+        //{
+        //    var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+        //    var result = orderService.GetOrderByRentID(orderRequest);
+        //    if (result != null)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound();
+        //}
 
         [HttpPost]
         [Route("CreateOrder/{storeId}")]
@@ -56,6 +83,19 @@ namespace Reso_OrderAPI.Controllers
         {
             var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
             var result = orderService.CreateOrder(storeId, order);
+            if (result == true)
+            {
+                return Ok(result);
+            }
+            return NotFound();
+        }
+
+        [HttpPut]
+        [Route("UpdateOrder/{storeId}")]
+        public IActionResult UpdateOrder(int storeId, OrderApiViewModel order)
+        {
+            var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+            var result = orderService.UpdateOrder(storeId, order);
             if (result == true)
             {
                 return Ok(result);

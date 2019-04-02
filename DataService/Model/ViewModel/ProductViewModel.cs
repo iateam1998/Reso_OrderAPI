@@ -87,14 +87,14 @@ namespace DataService.Model.ViewModel
         public virtual ICollection<CustomerProductMapping> CustomerProductMapping { get; set; }
         public virtual ICollection<DateProduct> DateProduct { get; set; }
         public virtual ICollection<Favorited> Favorited { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
-        public virtual ICollection<ProductCollectionItemMapping> ProductCollectionItemMapping { get; set; }
-        public virtual ICollection<ProductComboDetail> ProductComboDetailCombo { get; set; }
-        public virtual ICollection<ProductComboDetail> ProductComboDetailProduct { get; set; }
-        public virtual ICollection<ProductDetailMapping> ProductDetailMapping { get; set; }
-        public virtual ICollection<ProductImage> ProductImage { get; set; }
-        public virtual ICollection<ProductItemCompositionMapping> ProductItemCompositionMapping { get; set; }
-        public virtual ICollection<ProductSpecification> ProductSpecification { get; set; }
+        //public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+        //public virtual ICollection<ProductCollectionItemMapping> ProductCollectionItemMapping { get; set; }
+        //public virtual ICollection<ProductComboDetail> ProductComboDetailCombo { get; set; }
+        //public virtual ICollection<ProductComboDetail> ProductComboDetailProduct { get; set; }
+        //public virtual ICollection<ProductDetailMapping> ProductDetailMapping { get; set; }
+        //public virtual ICollection<ProductImage> ProductImage { get; set; }
+        //public virtual ICollection<ProductItemCompositionMapping> ProductItemCompositionMapping { get; set; }
+        //public virtual ICollection<ProductSpecification> ProductSpecification { get; set; }
         public virtual ICollection<Rating> Rating { get; set; }
 
         public double? DiscountPriceEdit
