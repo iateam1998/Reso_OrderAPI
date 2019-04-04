@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reso_OrderAPI", "Reso_OrderAPI\Reso_OrderAPI.csproj", "{5115DC5A-9403-46E4-939E-797E45A194D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reso_OrderAPI", "Reso_OrderAPI\Reso_OrderAPI.csproj", "{5115DC5A-9403-46E4-939E-797E45A194D2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService", "DataService\DataService.csproj", "{DDFE6904-0506-449D-89DD-246B7ED2A7EC}"
 EndProject

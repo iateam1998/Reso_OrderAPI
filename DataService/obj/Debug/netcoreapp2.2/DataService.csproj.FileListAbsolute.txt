@@ -43,3 +43,4 @@ E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.AssemblyInfo.cs
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CopyComplete
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.dll
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
+E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache

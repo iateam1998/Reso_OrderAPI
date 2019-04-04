@@ -90,17 +90,17 @@ namespace Reso_OrderAPI.Controllers
             return NotFound();
         }
 
-        [HttpPut]
-        [Route("UpdateOrder/{storeId}")]
-        public IActionResult UpdateOrder(int storeId, OrderApiViewModel order)
-        {
-            var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
-            var result = orderService.UpdateOrder(storeId, order);
-            if (result == true)
-            {
-                return Ok(result);
-            }
-            return NotFound();
-        }
+        //[HttpPut]
+        //[Route("UpdateOrder/{storeId}")]
+        //public IActionResult UpdateOrder(int storeId, OrderApiViewModel order)
+        //{
+        //    var orderService = ServiceFactory.CreateService<IOrderService>(_serviceProvider);
+        //    var result = orderService.UpdateOrder(storeId, order);
+        //    if (result == true)
+        //    {
+        //        return Ok(result);
+        //    }
+        //    return NotFound();
+        //}
     }
 }
