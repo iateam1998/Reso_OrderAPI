@@ -44,3 +44,6 @@ E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CopyComplete
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.dll
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.pdb
 E:\C#\POS\DataService\obj\Debug\netcoreapp2.2\DataService.csprojAssemblyReference.cache
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Data.dll
+E:\Internship\Developer\OrderAPI\DataService\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Mvc.dll
+E:\Internship\Developer\OrderAPI\DataService\obj\Debug\netcoreapp2.2\DataService.csproj.CopyComplete

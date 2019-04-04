@@ -54,3 +54,5 @@ E:\C#\POS\Reso_OrderAPI\obj\Debug\netcoreapp2.2\Reso_OrderAPI.RazorTargetAssembl
 E:\C#\POS\Reso_OrderAPI\obj\Debug\netcoreapp2.2\Reso_OrderAPI.csproj.CopyComplete
 E:\C#\POS\Reso_OrderAPI\obj\Debug\netcoreapp2.2\Reso_OrderAPI.dll
 E:\C#\POS\Reso_OrderAPI\obj\Debug\netcoreapp2.2\Reso_OrderAPI.pdb
+E:\Internship\Developer\OrderAPI\Reso_OrderAPI\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Data.dll
+E:\Internship\Developer\OrderAPI\Reso_OrderAPI\bin\Debug\netcoreapp2.2\SkyWeb.DatVM.Mvc.dll
